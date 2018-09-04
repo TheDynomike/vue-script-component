@@ -1,0 +1,48 @@
+{
+  "name": "vue-script-component",
+  "version": "0.1.6",
+  "description": "A vuejs component to easily load scripts as a vue component",
+  "author": "Michael Hernandez (dynomike)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheDynomike/vue-script-component.git"
+  },
+  "keywords": [
+    "vue",
+    "script",
+    "tags",
+    "ads",
+    "third-party",
+    "chitika",
+    "medianet",
+    "propeller",
+    "google",
+    "component"
+  ],
+  "license": "MIT",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.0",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "document-ready": "^2.0.1",
+    "file-loader": "^2.0.0",
+    "node-sass": "^4.9.3",
+    "postscribe": "^2.0.8",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.1",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.6"
+  }
+}
