@@ -1,6 +1,6 @@
 {
   "name": "vue-script-component",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A vuejs component to easily load scripts as a vue component",
   "author": "Michael Hernandez (dynomike)",
   "repository": {
