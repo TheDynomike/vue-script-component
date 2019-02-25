@@ -1,44 +1,48 @@
 <template>
-  <div :id="compId">
-  </div>
+  <div :id="compId" :key="id"></div>
 </template>
 
 <script>
-import postscribe from "postscribe"
-var ready = require('document-ready')
+import postscribe from "postscribe";
+var ready = require("document-ready");
 
 export default {
   name: "VueScriptComponent",
-  props:["script"],
   data() {
+    let randomID = Math.random()
+      .toString(36)
+      .substring(7);
     return {
-      compId: Date.now() //we will use date.now as a soft ID so that users may load multiple vue-script-components without conflicting ids
+      compId: Date.now() + randomID
     };
   },
-
+  props: {
+    id: {
+      type: String,
+      default: null
+    },
+    script: {
+      type: String,
+      default: null
+    }
+  },
   mounted() {
-    var vm = this
-    ready(function () {
+    var vm = this;
+    ready(function() {
       let addEl = new Promise((resolve, reject) => {
-          postscribe(
-            `#${vm.compId}`,
-            `${vm.script}`,
-            {
-              done: function(x) {}
-            }
-          );
+        postscribe(`#${vm.compId}`, `${vm.script}`, {
+          done: function(x) {}
+        });
 
-        resolve()
-      });      
+        resolve();
+      });
       addEl.then(function(result) {
-          //do nothing
-      })
-    })
+        //do nothing
+      });
+    });
   }
-}
-
+};
 </script>
 
 <style scoped>
-
 </style>
