@@ -13,7 +13,7 @@ export default {
       .toString(36)
       .substring(7);
     return {
-      compId: Date.now() + randomID
+      compId: window.performance.now() + "-" + randomID
     };
   },
   props: {
