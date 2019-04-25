@@ -1,5 +1,5 @@
 <template>
-  <div :id="compId" :key="id"></div>
+  <div :id="compId"></div>
 </template>
 
 <script>
@@ -17,10 +17,6 @@ export default {
     };
   },
   props: {
-    id: {
-      type: String,
-      default: null
-    },
     script: {
       type: String,
       default: null
@@ -28,10 +24,13 @@ export default {
   },
   mounted() {
     var vm = this;
+
     ready(function() {
       let addEl = new Promise((resolve, reject) => {
         postscribe(`#${vm.compId}`, `${vm.script}`, {
-          done: function(x) {}
+          done: function(x) {
+            resolve(x);
+          }
         });
 
         resolve();
